@@ -1,0 +1,48 @@
+{
+  "hand_info": {
+    "stakes": "string",
+    "game_type": "string",
+    "hero_position": "string",
+    "hero_hand": "string",
+    "effective_stack_bb": "number",
+    "assumptions": ["string"]
+  },
+  "board": {
+    "flop": "string",
+    "turn": "string",
+    "river": "string"
+  },
+  "action_summary": {
+    "preflop": "string",
+    "flop": "string",
+    "turn": "string",
+    "river": "string"
+  },
+  "analysis": {
+    "summary": "string",
+    "main_takeaway": "string"
+  },
+  "good_plays": [
+    {
+      "label": "string",
+      "explanation": "string"
+    }
+  ],
+  "areas_to_improve": [
+    {
+      "label": "string",
+      "mistake": "string",
+      "recommended_line": "string"
+    }
+  ],
+  "improvement_tips": [
+    "string"
+  ],
+  "tags": [
+    "string"
+  ],
+  "difficulty_level": "beginner | reg",
+  "confidence_score": {
+    "hero_decisions": "number"
+  }
+}

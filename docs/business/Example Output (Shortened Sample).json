@@ -1,0 +1,54 @@
+{
+  "hand_info": {
+    "stakes": "$0.02/$0.05",
+    "game_type": "Rush & Cash",
+    "hero_position": "UTG",
+    "hero_hand": "J♠ J♦",
+    "effective_stack_bb": 200,
+    "assumptions": [
+      "Villain 5-bet range is extremely tight at micro-stakes"
+    ]
+  },
+  "board": {
+    "flop": "Q♦ 2♠ Q♥",
+    "turn": "K♣",
+    "river": "6♠"
+  },
+  "action_summary": {
+    "preflop": "Hero opens UTG, faces multiple re-raises, and commits all-in 200BB deep.",
+    "flop": "All-in preflop; board dealt.",
+    "turn": "No further action.",
+    "river": "Showdown."
+  },
+  "analysis": {
+    "summary": "Hero stacks off with JJ against a very strong preflop range at deep stack depth.",
+    "main_takeaway": "JJ should not commit all-in 200BB deep versus tight 5-bet ranges."
+  },
+  "good_plays": [
+    {
+      "label": "UTG open with JJ",
+      "explanation": "JJ is a standard open from early position."
+    }
+  ],
+  "areas_to_improve": [
+    {
+      "label": "Deep stack overcommitment",
+      "mistake": "Calling or jamming versus a tight 5-bet range.",
+      "recommended_line": "Fold JJ versus 5-bet when effective stacks exceed 150BB."
+    }
+  ],
+  "improvement_tips": [
+    "Avoid stacking off with JJ at 150BB+ without strong reads.",
+    "Prefer call or fold versus 4-bets at micro-stakes.",
+    "Use smaller 4-bet sizes and fold to jams."
+  ],
+  "tags": [
+    "deep-stack-error",
+    "preflop-leak",
+    "overcommitment"
+  ],
+  "difficulty_level": "reg",
+  "confidence_score": {
+    "hero_decisions": 0.92
+  }
+}
