@@ -98,6 +98,31 @@ Vercel will auto‑redeploy.
 
 If you want to sell credits, set the Polar environment variables and use the “Buy Credits” button component. Pricing is configured in the Polar dashboard; the product ID must match `POLAR_PRODUCT_ID`.
 
+### Setting Up Your Polar Payout Account
+
+When applying for a Polar payout account, fill in the Organization Details form as follows:
+
+**Organization Name:** ag-tech-thumbnails
+
+**Support Email:** dunkmaap@gmail.com
+
+**Website:** _(your production domain)_
+
+**Social Media:** _(your personal social links — used for identity verification, never shown publicly)_
+
+**Describe your business:**
+> We are in the AI/SaaS industry, building a YouTube thumbnail analyzer and optimization tool. We solve the problem of content creators struggling to create effective thumbnails that drive clicks and views. Our customers are YouTubers, content creators, and digital marketers who want to improve video performance through AI-driven thumbnail analysis and scoring.
+
+**What do you sell:**
+> We offer a SaaS subscription tool that uses AI to analyze and score YouTube thumbnails. Key features include: AI-powered thumbnail quality scoring, composition and color analysis, click-through rate optimization suggestions, competitor thumbnail comparison, and actionable improvement recommendations. Available via monthly and annual subscription plans.
+
+**How will you integrate Polar:**
+> Polar will power our subscription billing on our website. Users will see Polar checkout when upgrading from free to paid plans. We will use Polar's API for subscription management, webhooks to provision and revoke user access based on subscription status, and the customer portal for self-service subscription management.
+
+**Main customer acquisition channels:** Website & SEO, Social media
+
+**Currently using:** This is my first payment platform
+
 ## Scripts
 
 - `pnpm run dev` – Next.js dev server
