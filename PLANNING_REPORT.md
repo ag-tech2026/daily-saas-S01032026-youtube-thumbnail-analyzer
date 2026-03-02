@@ -70,3 +70,16 @@
 - The boilerplate is production-ready — just customize `src/domain/` and you're good to go.
 
 Good luck building! 🚀
+
+
+---
+
+## Implementation
+
+See `IMPLEMENTATION.md` for actual implementation details, including:
+- Domain prompt and schema
+- Routes implemented
+- Database schema used
+- Environment variables
+- Dependencies
+- Deviations from plan
