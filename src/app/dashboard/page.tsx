@@ -171,13 +171,13 @@ export default function DashboardPage() {
         <div className="p-6 border border-border rounded-lg">
           <div className="flex items-center gap-2 mb-2">
             <Upload className="h-5 w-5" />
-            <h2 className="text-xl font-semibold">Analyze Hand</h2>
+            <h2 className="text-xl font-semibold">Analyze Thumbnail</h2>
           </div>
           <p className="text-muted-foreground mb-4">
-            Upload a poker screenshot for instant GTO analysis
+            Upload a YouTube thumbnail for instant CTR analysis
           </p>
           <Button asChild>
-            <Link href="/upload">Upload Screenshot</Link>
+            <Link href="/upload">Upload Thumbnail</Link>
           </Button>
         </div>
 
@@ -234,10 +234,10 @@ export default function DashboardPage() {
         {!historyLoading && analyses.length === 0 && (
           <div className="text-center py-12 border border-dashed border-border rounded-lg">
             <p className="text-muted-foreground mb-3">
-              No analyses yet. Upload a poker screenshot to get started!
+              No analyses yet. Upload a thumbnail to get started!
             </p>
             <Button asChild variant="outline">
-              <Link href="/upload">Upload Screenshot</Link>
+              <Link href="/upload">Upload Thumbnail</Link>
             </Button>
           </div>
         )}
