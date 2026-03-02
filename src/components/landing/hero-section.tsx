@@ -5,14 +5,13 @@ export function HeroSection() {
   return (
     <section className="container mx-auto px-4 py-16 lg:py-24">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left: headline + CTA */}
         <div className="space-y-6">
           <h1 className="text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
-            Find Out If Your Poker Plays Are Actually Correct
+            Know if Your Thumbnail Will Get Clicked — Before You Publish
           </h1>
           <p className="text-xl text-muted-foreground">
-            Upload a screenshot of any poker hand. Get instant GTO analysis
-            that tells you exactly what you did right and wrong.
+            Upload your YouTube thumbnail. Get an instant AI-powered CTR score
+            with specific fixes for contrast, text, emotion, and curiosity gap.
           </p>
           <div className="space-y-3">
             <SignUpCtaButton size="lg" className="w-full sm:w-auto" />
@@ -21,8 +20,6 @@ export function HeroSection() {
             </p>
           </div>
         </div>
-
-        {/* Right: analysis mockup */}
         <div>
           <AnalysisMockup />
         </div>

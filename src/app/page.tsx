@@ -4,13 +4,13 @@ import { PricingSection } from "@/components/landing/pricing-section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Poker AI Review — Instant GTO Analysis from Screenshots",
+  title: "ThumbnailIQ — Know if Your Thumbnail Will Get Clicked",
   description:
-    "Upload a poker screenshot and get instant GTO analysis. Find leaks in your game in 30 seconds. 3 free analyses on signup.",
+    "Upload your YouTube thumbnail and get instant AI-powered CTR analysis. Scores, strengths, and actionable fixes in 30 seconds. 3 free analyses on signup.",
   openGraph: {
-    title: "Poker AI Review — Instant GTO Analysis from Screenshots",
+    title: "ThumbnailIQ — Know if Your Thumbnail Will Get Clicked",
     description:
-      "Upload a poker screenshot and get instant GTO analysis. Find leaks in your game in 30 seconds. 3 free analyses on signup.",
+      "Upload your YouTube thumbnail and get instant AI-powered CTR analysis. Scores, strengths, and actionable fixes in 30 seconds. 3 free analyses on signup.",
   },
 };
 

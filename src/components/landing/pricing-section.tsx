@@ -9,15 +9,15 @@ import {
 } from "@/components/ui/card";
 
 const FREE_FEATURES = [
-  "3 hand analyses",
-  "Full GTO feedback",
-  "Beginner-friendly explanations",
+  "3 thumbnail analyses",
+  "Full CTR score breakdown",
+  "Strengths & fixes report",
 ];
 
 const PRO_FEATURES = [
-  "50 hand analyses",
+  "50 thumbnail analyses",
   "Never expires",
-  "Full GTO feedback",
+  "Full CTR score breakdown",
   "$0.18 per analysis",
 ];
 
@@ -32,30 +32,17 @@ export function PricingSection() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-        {/* Free tier */}
         <Card>
           <CardHeader>
             <CardTitle className="text-xl">Free</CardTitle>
-            <p className="text-4xl font-bold mt-1">
-              $0
-            </p>
+            <p className="text-4xl font-bold mt-1">$0</p>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2">
               {FREE_FEATURES.map((feature) => (
                 <li key={feature} className="flex items-center gap-2 text-sm">
-                  <svg
-                    className="h-4 w-4 text-green-500 shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
+                  <svg className="h-4 w-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {feature}
                 </li>
@@ -69,7 +56,6 @@ export function PricingSection() {
           </CardFooter>
         </Card>
 
-        {/* Pro Pack */}
         <Card className="border-primary relative overflow-hidden">
           <Badge className="absolute top-4 right-4">Best Value</Badge>
           <CardHeader>
@@ -83,18 +69,8 @@ export function PricingSection() {
             <ul className="space-y-2">
               {PRO_FEATURES.map((feature) => (
                 <li key={feature} className="flex items-center gap-2 text-sm">
-                  <svg
-                    className="h-4 w-4 text-green-500 shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
+                  <svg className="h-4 w-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   {feature}
                 </li>
