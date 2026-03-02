@@ -4,9 +4,11 @@ export const analysisSchema = z.object({
   thumbnail_info: z.object({
     title_text: z.string().describe("Visible text extracted from the thumbnail, empty string if none"),
     has_face: z.boolean().describe("Whether a human face is visible"),
-    face_count: z.number().int().describe("Number of faces detected (0 if none)"),
-    face_emotion: z.string().describe("Dominant emotion: happy, shocked, serious, excited, neutral, or other"),
-    dominant_colors: z.array(z.string()).describe("2-4 dominant colors (e.g. ['red', 'black', 'white'])"),
+    face_count: z.number().int().min(0).describe("Number of faces detected (0 if none)"),
+    face_emotion: z.enum(["happy", "shocked", "serious", "excited", "neutral", "other"])
+      .describe("Dominant emotion detected on the primary face"),
+    dominant_colors: z.array(z.string()).min(2).max(4)
+      .describe("2-4 dominant colors (e.g. ['red', 'black', 'white'])"),
     assumptions: z.array(z.string()).describe("Assumptions made due to unclear or low-resolution image"),
   }),
   scores: z.object({
@@ -41,9 +43,13 @@ export const analysisSchema = z.object({
     .describe("What to fix to improve CTR (minimum 2)"),
   action_items: z
     .array(z.string())
+    .min(3)
+    .max(5)
     .describe("3-5 specific, actionable changes to try in the next version"),
   tags: z
     .array(z.string())
+    .min(2)
+    .max(4)
     .describe(
       "2-4 kebab-case classification tags (e.g. 'low-contrast', 'strong-face', 'text-overload', 'curiosity-gap', 'color-pop', 'missing-face')"
     ),
