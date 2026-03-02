@@ -56,7 +56,7 @@ export const processAnalysis = inngest.createFunction(
               content: [
                 {
                   type: "text",
-                  text: "Analyze the attached poker hand image. Extract all visible hand details and produce a structured GTO-based analysis according to the JSON schema below.",
+                  text: "Analyze the attached YouTube thumbnail image. Extract all visible elements and produce a structured CTR-focused analysis according to the JSON schema below.",
                 },
                 {
                   type: "image",
