@@ -12,7 +12,7 @@ export default function UploadPage() {
   const router = useRouter();
 
   const handleUploadComplete = () => {
-    toast.success("Screenshot uploaded! Analysis will begin shortly.");
+    toast.success("Thumbnail uploaded! Analysis will begin shortly.");
     router.push("/dashboard");
   };
 
@@ -32,7 +32,7 @@ export default function UploadPage() {
             <Lock className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
             <h1 className="text-2xl font-bold mb-2">Protected Page</h1>
             <p className="text-muted-foreground mb-6">
-              You need to sign in to upload poker screenshots
+              You need to sign in to analyze thumbnails
             </p>
           </div>
           <UserProfile />
@@ -47,9 +47,9 @@ export default function UploadPage() {
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-2xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Upload Poker Screenshot</h1>
+          <h1 className="text-3xl font-bold mb-2">Analyze Your Thumbnail</h1>
           <p className="text-muted-foreground mb-4">
-            Upload a screenshot from your poker game and get instant GTO
+            Upload your YouTube thumbnail and get instant AI-powered CTR
             analysis
           </p>
           <div className="flex items-center gap-2 text-sm">

@@ -63,10 +63,10 @@ export async function POST(req: Request) {
     }
 
     // Server-side validation: file type
-    const allowedTypes = ["image/jpeg", "image/png"];
+    const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
     if (!allowedTypes.includes(file.type)) {
       return new Response(
-        JSON.stringify({ error: "Only PNG and JPG images are allowed" }),
+        JSON.stringify({ error: "Only PNG, JPG, and WebP images are allowed" }),
         {
           status: 400,
           headers: { "Content-Type": "application/json" },

@@ -33,7 +33,7 @@ export function FileUpload({ credits, onUploadComplete }: FileUploadProps) {
         if (rejection.errors[0]?.code === "file-too-large") {
           setError("File too large. Maximum size is 10MB");
         } else if (rejection.errors[0]?.code === "file-invalid-type") {
-          setError("Only PNG and JPG images are allowed");
+          setError("Only PNG, JPG, and WebP images are allowed");
         } else {
           setError("File not accepted");
         }
@@ -91,6 +91,7 @@ export function FileUpload({ credits, onUploadComplete }: FileUploadProps) {
     accept: {
       "image/jpeg": [".jpg", ".jpeg"],
       "image/png": [".png"],
+      "image/webp": [".webp"],
     },
     maxSize: 10 * 1024 * 1024, // 10MB
     multiple: false,
@@ -119,12 +120,12 @@ export function FileUpload({ credits, onUploadComplete }: FileUploadProps) {
         <p className="text-lg font-medium mb-2">
           {uploading
             ? "Uploading..."
-            : "Drag & drop your poker screenshot here"}
+            : "Drag & drop your thumbnail here"}
         </p>
         <p className="text-sm text-muted-foreground mb-1">
           or click to select a file
         </p>
-        <p className="text-xs text-muted-foreground">PNG or JPG, max 10MB</p>
+        <p className="text-xs text-muted-foreground">PNG, JPG or WebP · Recommended 1280×720 · Max 10MB</p>
       </div>
 
       {error && (
