@@ -9,7 +9,7 @@ import { ModeToggle } from "./ui/mode-toggle";
 
 const NAV_LINKS = [
   { label: "Dashboard",    href: "/dashboard" },
-  { label: "Analyze Hand", href: "/upload" },
+  { label: "Analyze Thumbnail", href: "/upload" },
   { label: "Profile",      href: "/profile" },
 ] as const;
 
@@ -37,16 +37,16 @@ export function SiteHeader() {
           <Link
             href="/"
             className="flex items-center gap-2.5 shrink-0 group"
-            aria-label="Poker AI Review — Go to homepage"
+            aria-label="ThumbnailIQ — Go to homepage"
           >
             <div
               className="flex items-center justify-center w-9 h-9 rounded-lg border border-primary/40 bg-primary/10 text-primary text-xl leading-none group-hover:border-primary/70 group-hover:bg-primary/15 transition-all duration-200"
               aria-hidden="true"
             >
-              ♠
+              🎬
             </div>
             <span className="font-[family-name:var(--font-playfair)] text-lg font-semibold tracking-wide text-primary group-hover:text-primary/85 transition-colors duration-200 hidden sm:inline">
-              Poker AI Review
+              ThumbnailIQ
             </span>
           </Link>
 
