@@ -1,48 +1,57 @@
 import { z } from "zod";
 
 export const analysisSchema = z.object({
-  hand_info: z.object({
-    stakes: z.string().describe("Stakes (e.g. '$0.02/$0.05')"),
-    game_type: z.string().describe("Game type (e.g. 'Rush & Cash', 'Zoom', 'Regular')"),
-    hero_position: z.string().describe("Hero's position (e.g. 'UTG', 'BTN', 'BB')"),
-    hero_hand: z.string().describe("Hero's hole cards (e.g. 'J♠ J♦')"),
-    effective_stack_bb: z.number().describe("Effective stack depth in big blinds"),
-    assumptions: z.array(z.string()).describe("Assumptions made due to missing info"),
+  thumbnail_info: z.object({
+    title_text: z.string().describe("Visible text extracted from the thumbnail, empty string if none"),
+    has_face: z.boolean().describe("Whether a human face is visible"),
+    face_count: z.number().int().describe("Number of faces detected (0 if none)"),
+    face_emotion: z.string().describe("Dominant emotion: happy, shocked, serious, excited, neutral, or other"),
+    dominant_colors: z.array(z.string()).describe("2-4 dominant colors (e.g. ['red', 'black', 'white'])"),
+    assumptions: z.array(z.string()).describe("Assumptions made due to unclear or low-resolution image"),
   }),
-  board: z.object({
-    flop: z.string().describe("Flop cards (e.g. 'Q♦ 2♠ Q♥') or empty string if no flop"),
-    turn: z.string().describe("Turn card or empty string if no turn"),
-    river: z.string().describe("River card or empty string if no river"),
-  }),
-  action_summary: z.object({
-    preflop: z.string().describe("Preflop action summary"),
-    flop: z.string().describe("Flop action summary or empty string if no flop"),
-    turn: z.string().describe("Turn action summary or empty string if no turn"),
-    river: z.string().describe("River action summary or empty string if no river"),
+  scores: z.object({
+    overall: z.number().min(0).max(10).describe("Overall CTR potential score 0-10"),
+    visual_contrast: z.number().min(0).max(10).describe("How well elements pop off the background 0-10"),
+    text_legibility: z.number().min(0).max(10).describe("Text readability at small thumbnail size 0-10"),
+    emotional_hook: z.number().min(0).max(10).describe("Strength of face/emotion or visual drama 0-10"),
+    curiosity_gap: z.number().min(0).max(10).describe("How much the thumbnail makes viewers want to click 0-10"),
   }),
   analysis: z.object({
-    summary: z.string().describe("Overall hand analysis summary (2-4 sentences)"),
-    main_takeaway: z.string().describe("The single most important lesson from this hand"),
+    summary: z.string().describe("2-4 sentence overall CTR assessment"),
+    main_takeaway: z.string().describe("The single most important improvement to make"),
   }),
-  good_plays: z.array(
-    z.object({
-      label: z.string().describe("Short label for the good play (e.g. 'UTG open with JJ')"),
-      explanation: z.string().describe("Why this was a good play"),
-    })
-  ).min(3).describe("List of things Hero did well (minimum 3)"),
-  areas_to_improve: z.array(
-    z.object({
-      label: z.string().describe("Short label for the mistake (e.g. 'Deep stack overcommitment')"),
-      mistake: z.string().describe("What Hero did wrong"),
-      recommended_line: z.string().describe("What Hero should have done instead"),
-    })
-  ).min(3).describe("List of mistakes with recommended corrections (minimum 3)"),
-  improvement_tips: z.array(z.string()).describe("3-5 actionable tips Hero should apply next time"),
-  tags: z.array(z.string()).describe("2-4 short kebab-case tags (e.g. 'deep-stack-error', 'preflop-leak')"),
-  difficulty_level: z.enum(["beginner", "reg"]).describe("Skill level this hand is relevant for"),
-  confidence_score: z.object({
-    hero_decisions: z.number().min(0).max(1).describe("Confidence 0-1 in the analysis quality based on image clarity"),
-  }),
+  strengths: z
+    .array(
+      z.object({
+        label: z.string().describe("Short label for the strength"),
+        explanation: z.string().describe("Why this element works well for CTR"),
+      })
+    )
+    .min(2)
+    .describe("What works well for CTR (minimum 2)"),
+  improvements: z
+    .array(
+      z.object({
+        label: z.string().describe("Short label for the issue"),
+        issue: z.string().describe("What is wrong and why it hurts CTR"),
+        recommendation: z.string().describe("Specific fix to apply"),
+      })
+    )
+    .min(2)
+    .describe("What to fix to improve CTR (minimum 2)"),
+  action_items: z
+    .array(z.string())
+    .describe("3-5 specific, actionable changes to try in the next version"),
+  tags: z
+    .array(z.string())
+    .describe(
+      "2-4 kebab-case classification tags (e.g. 'low-contrast', 'strong-face', 'text-overload', 'curiosity-gap', 'color-pop', 'missing-face')"
+    ),
+  confidence_score: z
+    .number()
+    .min(0)
+    .max(1)
+    .describe("Confidence 0-1 based on image clarity and resolution"),
 });
 
 export type AnalysisResult = z.infer<typeof analysisSchema>;
